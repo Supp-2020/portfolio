@@ -1,6 +1,29 @@
-@import '../src/fonts/fonts.css';
+@import './assets/fonts/fonts.css';
 
-*{
+:root {
+
+  /* COLORS */
+  --color-primary: #3498db;
+  --color-secondary: #2ecc71;
+  --color-accent: #e74c3c;
+
+  /* PADDING */
+  --padding-small: 8px;
+  --padding-medium: 16px;
+  --padding-large: 24px;
+
+  /* MARGIN */
+  --margin-small: 4px;
+  --margin-medium: 12px;
+  --margin-large: 20px;
+
+  /* import { FaLinkedin } from "react-icons/fa6"; */
+  /* import { FaGithub } from "react-icons/fa";*/
+  /* import { GiHamburgerMenu } from "react-icons/gi";*/
+  /* import { RxCross1 } from "react-icons/rx";*/
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,5 +31,6 @@
   font-weight: 400;
   font-style: normal;
 }
-body{
+
+body {
 }
