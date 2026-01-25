@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+
 import React from "react";
 import { GrLinkedin } from "react-icons/gr";
 import { BsGithub } from "react-icons/bs";
@@ -63,40 +63,38 @@ const Footer = () => {
             {/* Navigation links */}
             <div className="flex gap-8">
               {navLinks.map((item) => (
-                <>
+                <React.Fragment key={item.label}>
                   {item?.isAboutMe ? (
-                    <button className="inline-block bg-[#b9ff66] text-slate-900 hover:bg-lime-200  text-xs font-bold px-3 py-1 rounded">
-                      <a key={item.label} href={item.href}>
-                        {item.label}
-                      </a>
-                    </button>
+                    <a
+                      href={item.href}
+                      className="inline-block bg-[#b9ff66] text-slate-900 hover:bg-lime-200  text-xs font-bold px-3 py-1 rounded"
+                    >
+                      {item.label}
+                    </a>
                   ) : (
                     <a
-                      key={item.label}
                       href={item.href}
                       className="text-gray-400 hover:text-white transition text-sm"
                     >
                       {item.label}
                     </a>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </div>
 
             {/* Social icons */}
             <div className="flex gap-4">
               {socialIcons.map((item) => (
-                <>
-                  <a
-                    key={item.key}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition"
-                  >
-                    {item.icon}
-                  </a>
-                </>
+                <a
+                  key={item.key}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition"
+                >
+                  {item.icon}
+                </a>
               ))}
             </div>
           </div>
@@ -110,7 +108,7 @@ const Footer = () => {
                 link.download = "resume.pdf";
                 link.click();
               }}
-              className="bg-[#b9ff66] hover:bg-lime-200 text-slate-900 font-bold px-8 py-3 rounded transition"
+              className="bg-[#b9ff66] hover:bg-lime-200 text-slate-900 font-bold px-8 py-3 rounded transition cursor-pointer"
             >
               Download Resume
             </button>
@@ -122,19 +120,17 @@ const Footer = () => {
           <div className=" flex items-center gap-8">
             <code>Fun Websites: </code>
             {funWebsites.map((item) => (
-              <>
-                <a
-                  key={item.key}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition"
-                >
-                  <code>
-                    {item.key} {item.emoji}
-                  </code>
-                </a>
-              </>
+              <a
+                key={item.key}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                <code>
+                  {item.key} {item.emoji}
+                </code>
+              </a>
             ))}
           </div>
           <code>Last Updated : 25/01/2026</code>

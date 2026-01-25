@@ -4,12 +4,42 @@ import { useState } from "react";
 import contactUsIcon from "../../public/assets/full-inbox-animate.svg";
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({});
-  function handleSubmit() {
-    return null;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isLoading, setLoading] = useState(false);
+
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   }
-  function handleInputChange() {
-    return null;
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data?.error || "Failed to send message");
+        return;
+      }
+
+      alert("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("❌ Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <section className="mx-auto max-w-5xl py-16">
@@ -78,7 +108,14 @@ export default function ContactUs() {
               type="submit"
               className="w-full bg-[#191A23] hover:bg-[#191A23]/90 text-white font-bold py-3 rounded-lg transition cursor-pointer"
             >
-              Send Message
+              {isLoading ? (
+                <>
+                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         </div>
