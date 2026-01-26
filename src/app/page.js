@@ -3,14 +3,16 @@ import Home from "@/components/Home";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import GithubSection from "@/components/GithubSection";
+import WorkExperience from "@/components/WorkExperience/WorkExperience";
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-1 px-16">
+      <main className="flex-1 px-16 space-y-5">
         <Home />
+        <WorkExperience />
         <GithubSection />
         <ContactUs />
       </main>

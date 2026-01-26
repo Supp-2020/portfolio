@@ -3,6 +3,7 @@
 import React from "react";
 import { GrLinkedin } from "react-icons/gr";
 import { BsGithub } from "react-icons/bs";
+import { FiDownload } from "react-icons/fi";
 
 const socialIcons = [
   {
@@ -67,7 +68,7 @@ const Footer = () => {
                   {item?.isAboutMe ? (
                     <a
                       href={item.href}
-                      className="inline-block bg-[#b9ff66] text-slate-900 hover:bg-lime-200  text-xs font-bold px-3 py-1 rounded"
+                      className="inline-block bg-[#b9ff66] text-slate-900 hover:bg-lime-200 text-xs font-bold px-3 py-1 rounded"
                     >
                       {item.label}
                     </a>
@@ -108,8 +109,9 @@ const Footer = () => {
                 link.download = "resume.pdf";
                 link.click();
               }}
-              className="bg-[#b9ff66] hover:bg-lime-200 text-slate-900 font-bold px-8 py-3 rounded transition cursor-pointer"
+              className="bg-[#b9ff66] flex items-center gap-2 hover:bg-lime-200 text-slate-900 font-bold px-8 py-3 rounded transition cursor-pointer"
             >
+              <FiDownload />
               Download Resume
             </button>
           </div>
