@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Supreet PortFolio",
+  title: "Supreet.js",
   description: "Supreet Portfolio",
 };
 

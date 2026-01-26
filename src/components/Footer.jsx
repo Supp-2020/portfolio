@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex items-start justify-between mb-6">
           {/* Left section - Logo and contact */}
           <div className="flex-1 space-y-4">
-            <h2 className="text-2xl font-bold mb-6">Portfolio</h2>
+            <h2 className="text-2xl font-bold mb-6">Supreet.js</h2>
 
             <div className="">
               <span className="inline-block bg-[#b9ff66] text-slate-900 text-xs font-bold px-3 py-1 rounded mb-4">

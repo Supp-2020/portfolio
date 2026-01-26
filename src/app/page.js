@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Home from "@/components/Home";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+import GithubSection from "@/components/GithubSection";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
 
       <main className="flex-1 px-16">
         <Home />
+        <GithubSection />
         <ContactUs />
       </main>
       <Footer />
