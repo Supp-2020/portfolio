@@ -2,27 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { valtechTechStack } from "@/libs/constants";
+import { imageCards, workExpArray } from "@/libs/constants";
 
 export default function WorkExperience() {
   const [activeImg, setActiveImg] = useState({});
-
-  const cards = [
-    {
-      src: "/images/1000049413.jpg",
-      title: "Valtech India Hackthon 2nd Prize",
-      rotate: "-rotate-6",
-      hoverRotate: "hover:-rotate-1",
-      offset: "sm:translate-x-6 sm:translate-y-6",
-    },
-    {
-      src: "/images/1000024594.png",
-      title: "Jewels of Valtech Award",
-      rotate: "rotate-6",
-      hoverRotate: "hover:rotate-1",
-      offset: "sm:-translate-x-2 sm:-translate-y-2",
-    },
-  ];
 
   return (
     <section className="w-full">
@@ -37,7 +20,7 @@ export default function WorkExperience() {
 
       {/* Content */}
       <div className="bg-[#191a23] px-8 py-10 rounded-xl">
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* LEFT CARD */}
           <div className="md:w-1/3 space-y-4">
             {/* TEXT: force it to start from left of the column */}
@@ -52,20 +35,6 @@ export default function WorkExperience() {
               </a>
               <p className="text-sm mt-1">Sept 2023 - Present</p>
               <p className="text-sm mt-1">Bangalore, India</p>
-
-              <div className="flex flex-wrap w-full gap-2 mt-8">
-                {valtechTechStack.map((item, idx) => (
-                  <>
-                    <span
-                      key={`${item}-${idx}`}
-                      className="px-3 py-1 rounded-full text-xs font-semibold
-                 bg-[#b9ff66] text-[#191a23] transition whitespace-nowrap"
-                    >
-                      {item}
-                    </span>
-                  </>
-                ))}
-              </div>
             </div>
 
             <div className="relative w-full flex justify-center lg:justify-start">
@@ -112,7 +81,7 @@ export default function WorkExperience() {
               >
                 {/* Cards */}
                 <div className="flex flex-col sm:flex-row gap-10 sm:gap-6">
-                  {cards.map((card) => (
+                  {imageCards.map((card) => (
                     <div key={card.src} className={card.offset}>
                       <div
                         onMouseEnter={() => setActiveImg(card)}
@@ -171,37 +140,39 @@ export default function WorkExperience() {
           {/* Experience Points */}
           <div className="md:flex-1">
             <div className="rounded-2xl px-6 space-y-8 text-white">
-              {/* DESIGNATION 1 */}
-              <div>
-                <h4 className="text-lg font-bold">
-                  Software Developer (SDE-1)
-                </h4>
-                <p className="text-xs text-white/70 mt-1">
-                  July 2025 — Present
-                </p>
 
-                <ul className="mt-3 list-disc pl-5 text-sm space-y-2">
-                  <li>Built reusable UI components with React + Next.js</li>
-                  <li>Improved performance and reduced load time</li>
-                  <li>Worked with API integrations and dashboards</li>
-                </ul>
-              </div>
+              {workExpArray.workArray.map((items) => (
+                <div key={items.key}>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <h4 className="text-lg font-bold">{items.designation}</h4>
+                      <p className="text-xs text-white/70 mt-1">
+                        {items.workDates}
+                      </p>
+                    </div>
+                    <div>
+                      <code className="text-sm">Project: {items.platform}</code>
+                    </div>
+                  </div>
 
-              {/* DESIGNATION 2 */}
-              <div>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                  <h4 className="text-lg font-bold">
-                    Associate Software Developer
-                  </h4>
-                  <span className="text-sm">Sept 2023 - Jun 2025</span>
+                  <ul className="mt-3 list-disc pl-5 text-sm space-y-2">
+                    {items.bulletPoints.map((workItems) => (
+                      <li key={workItems}>{workItems}</li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap w-full gap-2 mt-6">
+                    {items.techStack.map((techItem) => (
+                      <span
+                        key={techItem}
+                        className="px-3 py-1 rounded-full text-xs font-semibold
+                 bg-[#b9ff66] text-[#191a23] transition whitespace-nowrap"
+                      >
+                        {techItem}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                <ul className="mt-3 list-disc pl-5 text-sm space-y-2">
-                  <li>Developed responsive pages using Tailwind CSS</li>
-                  <li>Collaborated with backend team for API contracts</li>
-                  <li>Fixed UI bugs and improved UX consistency</li>
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ export default function Header() {
   const rightNavItems = [
     { label: "Work Experience", href: "#" },
     { label: "Projects", href: "#" },
+    { label: "Blogs", href: "#" },
     { label: "About Me", href: "#" },
   ];
 
