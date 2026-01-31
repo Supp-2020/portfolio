@@ -3,7 +3,7 @@ import Home from "@/components/Home";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 import GithubSection from "@/components/GithubSection";
-import WorkExperience from "@/components/WorkExperience/WorkExperience";
+import WorkExperience from "@/components/WorkExperience";
 
 export default function App() {
   return (

@@ -44,10 +44,11 @@ export default function ContactUs() {
   return (
     <section className="mx-auto max-w-5xl py-16">
       {/* Header */}
-      <div className="mb-8 flex items-center">
+      <div className="mb-8 flex items-center gap-8">
         <h2 className="bg-[#B9FF66] text-3xl font-bold px-3 py-1 rounded">
           Say Hello
         </h2>
+        <p className="text-gray-900">Drop a message — I’m always happy to connect.</p>
       </div>
 
       {/* Form Container */}

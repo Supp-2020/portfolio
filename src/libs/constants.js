@@ -39,6 +39,17 @@ export const workExpArray = {
         "Styled Components",
       ],
     },
+    {
+      key: "desig3",
+      designation: "Python/Django Intern",
+      workDates: "",
+      platform: "",
+      bulletPoints: [
+        "Built a local food discovery app using Python and Django with preference-based recommendations",
+        "Implemented Google Maps API for real-time, proximity-based food suggestions",
+      ],
+      techStack: [],
+    },
   ],
 };
 
