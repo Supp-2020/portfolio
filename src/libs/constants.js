@@ -69,3 +69,11 @@ export const imageCards = [
     offset: "sm:-translate-x-2 sm:-translate-y-2",
   },
 ];
+
+export const renderRepo = [
+  "autodev-iq",
+  "blog-project-VUE",
+  "lynx-pinterest",
+  "password-validation",
+  "todo-list",
+];
