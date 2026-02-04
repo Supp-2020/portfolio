@@ -77,3 +77,30 @@ export const renderRepo = [
   "password-validation",
   "todo-list",
 ];
+
+export const CARD_VARIANTS = [
+  {
+    cardBg: "bg-[#f3f3f3]",
+    titleBg: "bg-[#B9FF66]",
+    titleText: "text-black",
+    arrowBg: "bg-black",
+    arrowText: "text-[#B9FF66]",
+    ctaText: "text-black",
+  },
+  {
+    cardBg: "bg-[#B9FF66]",
+    titleBg: "bg-white",
+    titleText: "text-black",
+    arrowBg: "bg-black",
+    arrowText: "text-[#B9FF66]",
+    ctaText: "text-black",
+  },
+  {
+    cardBg: "bg-[#191a23]",
+    titleBg: "bg-white",
+    titleText: "text-black",
+    arrowBg: "bg-white",
+    arrowText: "text-black",
+    ctaText: "text-white",
+  },
+];

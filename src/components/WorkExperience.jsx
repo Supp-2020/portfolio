@@ -8,7 +8,7 @@ export default function WorkExperience() {
   const [activeImg, setActiveImg] = useState(null);
 
   return (
-    <section className="w-full">
+    <section className="w-full mx-auto max-w-8xl">
       <div className="mb-8 flex items-center gap-8">
         <h2 className="bg-[#B9FF66] text-3xl font-bold px-3 py-1 rounded">
           Work Experience
