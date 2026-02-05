@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { renderRepo, CARD_VARIANTS } from "@/libs/constants";
+import { renderRepo, CARD_VARIANTS, projectConfig } from "@/libs/constants";
 import { FaArrowUp, FaSpinner } from "react-icons/fa";
+import { SlideOverlay } from "@/ui/Overlay";
 
 const Loader = ({ size = 24, className = "" }) => {
   return (
@@ -20,6 +21,8 @@ const Projects = () => {
   const [repoData, setRepoData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [slideFrom, setSlideFrom] = useState("right");
 
   useEffect(() => {
     let isMounted = true;
@@ -57,29 +60,11 @@ const Projects = () => {
     };
   }, []);
 
-  /* Images from https://icons8.com/illustrations/style--scribbles/free--y */
-  const projectConfig = {
-    "autodev-iq": {
-      title: "AutoDev IQ",
-      image: "/assets/scribbles-scribbles-32.svg",
-    },
-    "blog-project-VUE": {
-      title: "Blog Creator Application",
-      image: "/assets/scribbles-scribbles-35.svg",
-    },
-    "lynx-pinterest": {
-      title: "Pinterest Layout with Lynx",
-      image: "/assets/scribbles-scribbles-47.svg",
-    },
-    "password-validation": {
-      title: "Form Validator",
-      image: "/assets/scribbles-scribbles-43.svg",
-    },
-    "todo-list": {
-      title: "Todo List",
-      image: "/assets/scribbles-scribbles-80.svg",
-    },
-  };
+  function handleCard(idx) {
+    const position = idx % 2 === 0 ? "right" : "left";
+    setSlideFrom(position);
+    setOpen(true);
+  }
 
   return (
     <section className="w-full mx-auto max-w-6xl mt-24">
@@ -118,6 +103,7 @@ const Projects = () => {
               return (
                 <div
                   key={card.id}
+                  onClick={() => handleCard(idx)}
                   className={`relative rounded-3xl p-8 h-48 flex flex-col justify-between cursor-pointer ${variant.cardBg} transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:border-2 before:border-[#191a23] before:translate-y-2 before:-z-10`}
                 >
                   {/* TOP */}
@@ -143,21 +129,51 @@ const Projects = () => {
                   </div>
 
                   {/* CTA */}
-                  <button
-                    className={`flex items-center gap-2 w-fit font-semibold ${variant.ctaText}`}
+                  <a
+                    href={card.html_url}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center pr-2 gap-2 w-fit font-semibold 
+    ${variant.ctaText}
+    border border-transparent
+    rounded-full cursor-pointer
+    transition-all duration-300 ease-out
+    hover:border-current
+  `}
                   >
                     <span
-                      className={`rounded-full p-2 ${variant.arrowBg} ${variant.arrowText}`}
+                      className={`
+      rounded-full p-2
+      ${variant.arrowBg} ${variant.arrowText}
+      transition-transform duration-300 ease-out rotate-45
+      group-hover:rotate-90
+    `}
                     >
-                      <FaArrowUp size={14} className="rotate-65" />
+                      <FaArrowUp size={14} />
                     </span>
                     Learn more
-                  </button>
+                  </a>
                 </div>
               );
             })}
           </div>
         )}
+        <SlideOverlay
+          open={open}
+          onClose={() => setOpen(false)}
+          slideFrom={slideFrom}
+        >
+          {/* Modal content */}
+          <div className="p-6">
+            <h2 className="text-xl font-semibold">Project Preview</h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Screenshots, slider, description go here.
+            </p>
+          </div>
+        </SlideOverlay>
       </div>
     </section>
   );

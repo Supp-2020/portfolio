@@ -104,3 +104,27 @@ export const CARD_VARIANTS = [
     ctaText: "text-white",
   },
 ];
+
+/* Images from https://icons8.com/illustrations/style--scribbles/free--y */
+export const projectConfig = {
+  "autodev-iq": {
+    title: "AutoDev IQ",
+    image: "/assets/scribbles-scribbles-32.svg",
+  },
+  "blog-project-VUE": {
+    title: "Blog Creator Application",
+    image: "/assets/scribbles-scribbles-35.svg",
+  },
+  "lynx-pinterest": {
+    title: "Pinterest Layout with Lynx",
+    image: "/assets/scribbles-scribbles-47.svg",
+  },
+  "password-validation": {
+    title: "Form Validator",
+    image: "/assets/scribbles-scribbles-43.svg",
+  },
+  "todo-list": {
+    title: "Todo List",
+    image: "/assets/scribbles-scribbles-80.svg",
+  },
+};
