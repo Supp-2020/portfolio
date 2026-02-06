@@ -110,21 +110,44 @@ export const projectConfig = {
   "autodev-iq": {
     title: "AutoDev IQ",
     image: "/assets/scribbles-scribbles-32.svg",
+    featured: true,
+    carouselImages: [
+      "/images/readme-1.png",
+      "/images/readme-2.png",
+      "/images/readme-4.png",
+      "/images/readme-5.png",
+      "/images/readme-6.png",
+      "/images/readme-9.png",
+      "/images/readme-11.png",
+      "/images/readme-13.jpg",
+      "/images/readme-12.png",
+    ],
   },
   "blog-project-VUE": {
     title: "Blog Creator Application",
     image: "/assets/scribbles-scribbles-35.svg",
+    featured: true,
+    carouselImages: [
+      "/images/blog_image4.png",
+      "/images/blog_image8.png",
+      "/images/blog_image3.png",
+      "/images/blog_image5.png",
+      "/images/blog_image6.png",
+    ],
   },
   "lynx-pinterest": {
     title: "Pinterest Layout with Lynx",
     image: "/assets/scribbles-scribbles-47.svg",
+    carouselImages: ["/images/lynx_image.jpg"],
   },
   "password-validation": {
     title: "Form Validator",
     image: "/assets/scribbles-scribbles-43.svg",
+    carouselImages: ["/images/form_validation_image.png"],
   },
   "todo-list": {
     title: "Todo List",
     image: "/assets/scribbles-scribbles-80.svg",
+    carouselImages: ["/images/todo_image.png"],
   },
 };

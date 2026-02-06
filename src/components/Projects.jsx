@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { renderRepo, CARD_VARIANTS, projectConfig } from "@/libs/constants";
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowUp, FaStar } from "react-icons/fa";
 import { SlideOverlay } from "@/ui/Overlay";
 import ImageCarousel from "@/ui/Carousel";
 import { Loader } from "@/ui/Loader";
@@ -101,16 +101,19 @@ const Projects = () => {
                 >
                   {/* TOP */}
                   <div className="flex justify-between items-start">
-                    <h3 className="text-2xl font-bold leading-tight max-w-xs">
-                      {project.title.split(" ").map((word, i) => (
-                        <span
-                          key={i}
-                          className={`inline-block rounded-lg p-1 ${variant.titleBg} ${variant.titleText}`}
-                        >
-                          {word}
-                        </span>
-                      ))}
-                    </h3>
+                    <div className="flex items-center gap-1">
+                      <h3 className="text-2xl font-bold leading-tight max-w-xs">
+                        {project.title.split(" ").map((word, i) => (
+                          <span
+                            key={i}
+                            className={`inline-block rounded-lg p-1 ${variant.titleBg} ${variant.titleText}`}
+                          >
+                            {word}
+                          </span>
+                        ))}
+                      </h3>
+                      {project.featured && <FaStar />}
+                    </div>
 
                     <Image
                       src={project?.image || "https://placehold.co/300x350"}
@@ -162,9 +165,9 @@ const Projects = () => {
           {/* Modal content */}
           <div className="p-6">
             <ImageCarousel
-              title="Design System Dashboard"
-              description="A comprehensive design system dashboard built with React and Tailwind CSS. Features real-time component library, color palette management, and typography system. Perfect for teams collaborating on design consistency across projects."
-              images={["/images/1000024594.png", "/images/1000024595.png"]}
+              images={
+                projectConfig[selectedProject?.name]?.carouselImages || []
+              }
             />
             {/* Content */}
             <div className="space-y-6 p-8">
