@@ -2,20 +2,10 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { renderRepo, CARD_VARIANTS, projectConfig } from "@/libs/constants";
-import { FaArrowUp, FaSpinner } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import { SlideOverlay } from "@/ui/Overlay";
-
-const Loader = ({ size = 24, className = "" }) => {
-  return (
-    <div className="flex items-center justify-center py-8">
-      <FaSpinner
-        size={size}
-        className={`animate-spin text-gray-600 ${className}`}
-        aria-label="Loading"
-      />
-    </div>
-  );
-};
+import ImageCarousel from "@/ui/Carousel";
+import { Loader } from "@/ui/Loader";
 
 const Projects = () => {
   const [repoData, setRepoData] = useState([]);
@@ -23,6 +13,7 @@ const Projects = () => {
   const [error, setError] = useState(false);
   const [open, setOpen] = useState(false);
   const [slideFrom, setSlideFrom] = useState("right");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -34,7 +25,7 @@ const Projects = () => {
       })
       .then((data) => {
         if (!isMounted) return;
-
+        console.log("<<hh>>", data);
         setRepoData(
           data
             .filter(({ name }) => renderRepo.includes(name))
@@ -60,10 +51,12 @@ const Projects = () => {
     };
   }, []);
 
-  function handleCard(idx) {
+  function handleCard(card, idx) {
     const position = idx % 2 === 0 ? "right" : "left";
     setSlideFrom(position);
     setOpen(true);
+    console.log("<<HH>>", card);
+    setSelectedProject(card);
   }
 
   return (
@@ -103,7 +96,7 @@ const Projects = () => {
               return (
                 <div
                   key={card.id}
-                  onClick={() => handleCard(idx)}
+                  onClick={() => handleCard(card, idx)}
                   className={`relative rounded-3xl p-8 h-48 flex flex-col justify-between cursor-pointer ${variant.cardBg} transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] before:content-[''] before:absolute before:inset-0 before:rounded-3xl before:border-2 before:border-[#191a23] before:translate-y-2 before:-z-10`}
                 >
                   {/* TOP */}
@@ -120,8 +113,8 @@ const Projects = () => {
                     </h3>
 
                     <Image
-                      src={project.image}
-                      alt={project.title}
+                      src={project?.image || "https://placehold.co/300x350"}
+                      alt="Illustration"
                       width={96}
                       height={96}
                       className="object-contain"
@@ -130,7 +123,7 @@ const Projects = () => {
 
                   {/* CTA */}
                   <a
-                    href={card.html_url}
+                    href={card?.html_url}
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
@@ -168,10 +161,49 @@ const Projects = () => {
         >
           {/* Modal content */}
           <div className="p-6">
-            <h2 className="text-xl font-semibold">Project Preview</h2>
-            <p className="mt-2 text-sm text-gray-600">
-              Screenshots, slider, description go here.
-            </p>
+            <ImageCarousel
+              title="Design System Dashboard"
+              description="A comprehensive design system dashboard built with React and Tailwind CSS. Features real-time component library, color palette management, and typography system. Perfect for teams collaborating on design consistency across projects."
+              images={["/images/1000024594.png", "/images/1000024595.png"]}
+            />
+            {/* Content */}
+            <div className="space-y-6 p-8">
+              <div className="space-y-3">
+                <h2 className="text-3xl font-bold text-slate-900">
+                  {projectConfig[selectedProject?.name]?.title}
+                </h2>
+                <p className="text-slate-600 leading-relaxed">
+                  {selectedProject?.description}
+                </p>
+              </div>
+
+              <div className="flex items-center w-full gap-2">
+                <a
+                  href={selectedProject?.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button
+                    disabled={!selectedProject?.homepage}
+                    className={`w-full bg-[#191A23] hover:bg-[#191A23]/90 text-white font-bold py-3 px-4 rounded-lg transition ${!selectedProject?.homepage ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+                  >
+                    View Project
+                  </button>
+                </a>
+
+                <a
+                  href={selectedProject?.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <button className="w-full bg-[#191A23] hover:bg-[#191A23]/90 text-white font-bold py-3 rounded-lg transition cursor-pointer">
+                    Github Repo
+                  </button>
+                </a>
+              </div>
+            </div>
           </div>
         </SlideOverlay>
       </div>

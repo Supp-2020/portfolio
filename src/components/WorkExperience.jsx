@@ -149,9 +149,9 @@ export default function WorkExperience() {
             {/* Second Work Space */}
 
             <div className="text-white text-right mt-28">
-              <spam className="text-xl font-bold">
+              <span className="text-xl font-bold">
                 Zummit Infolabs
-              </spam>
+              </span>
               <p className="text-sm mt-1">Nov 2022 - Jan 2023</p>
             </div>
           </div>
