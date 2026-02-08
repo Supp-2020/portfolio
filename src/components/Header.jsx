@@ -3,10 +3,11 @@ import Link from "next/link";
 export default function Header() {
 
   const rightNavItems = [
-    { label: "Work Experience", href: "#" },
-    { label: "Projects", href: "#" },
-    { label: "Blogs", href: "#" },
-    { label: "About Me", href: "#" },
+    { label: "Work Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Blogs", href: "#blogs" },
+    { label: "About Me", href: "#about" },
+    { label: "Say Hello", href: "#contact" },
   ];
 
   return (
@@ -21,6 +22,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
+              scroll={true}
               className="text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
             >
               {item.label}

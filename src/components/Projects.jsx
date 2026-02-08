@@ -25,16 +25,14 @@ const Projects = () => {
       })
       .then((data) => {
         if (!isMounted) return;
-        console.log("<<hh>>", data);
         setRepoData(
           data
             .filter(({ name }) => renderRepo.includes(name))
-            .map(({ id, name, description, homepage, topics, html_url }) => ({
+            .map(({ id, name, description, homepage, html_url }) => ({
               id,
               name,
               description,
               homepage,
-              topics,
               html_url,
             })),
         );
@@ -55,12 +53,11 @@ const Projects = () => {
     const position = idx % 2 === 0 ? "right" : "left";
     setSlideFrom(position);
     setOpen(true);
-    console.log("<<HH>>", card);
     setSelectedProject(card);
   }
 
   return (
-    <section className="w-full mx-auto max-w-6xl mt-24">
+    <section id="projects" className="w-full mx-auto max-w-6xl mt-24">
       <div className="mb-8 flex items-center gap-8">
         <h2 className="bg-[#B9FF66] text-3xl font-bold px-3 py-1 rounded">
           Projects
