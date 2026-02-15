@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { FaDev } from "react-icons/fa";
+import Link from "next/link";
+import { FaArrowRight, FaDev, FaPenNib } from "react-icons/fa";
+import { TbCircleArrowDownRightFilled  } from "react-icons/tb";
 
 const LandingScreen = () => {
   return (
@@ -11,7 +13,7 @@ const LandingScreen = () => {
             My Creative Space
           </h3>
 
-          <div className="bg-[#191a23] text-white rounded-2xl shadow-md p-4 border border-gray-100 space-y-3 mt-6">
+          <div className="bg-[#191a23] text-white rounded-2xl shadow-md p-4 border border-gray-100 space-y-3 mt-4">
             {/* Fake Code Editor Preview */}
             <div className="relative rounded-xl h-48 overflow-hidden">
               <Image
@@ -22,57 +24,70 @@ const LandingScreen = () => {
               />
             </div>
 
-            <h3 className="font-semibold text-lg">Code Pen Creations</h3>
-            <p className="text-sm mt-1">
-              Tiny bits of code, big ideas.
+            <h5 className="font-semibold text-lg">Code Pen Creations</h5>
+            <p className="text-sm">
+              Tiny bits of code, big ideas
               <br />
               My digital playground where I turn &quot;what if&quot; into
-              interactive reality, one experiment at a time.
+              interactive reality
+              <a
+                href="https://codepen.io/supp-2020"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline ml-2 text-xs font-semibold text-[#b9ff66] flex items-center gap-1 underline"
+              >
+                View on CodePen
+              </a>
             </p>
-
-            <a
-              href="https://codepen.io/supp-2020"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-[#b9ff66] flex items-center gap-1 mt-3 underline"
-            >
-              View on CodePen
-            </a>
           </div>
 
-          <li className="mt-4">
+          <div className="border-t border-gray-600 my-5" />
+
+          {/* Blogs section */}
+          <div className="">
+            <h5 className="text-[11px] tracking-widest uppercase text-lime-500 font-medium">
+              Blog
+            </h5>
+
+            <h5 className="text-lg md:text-xl font-semibold leading-snug">
+              Sharing what I learn while building for the web
+            </h5>
+
             <a
               href="https://dev.to/supreet_pradhan"
               target="_blank"
               rel="noopener noreferrer"
-              className=""
+              className="inline-flex items-center gap-2 text-sm font-medium underline"
             >
-              See My{" "}
-              <span className="underline">
-                {" "}
-                Dev.to
-                <FaDev className="inline w-4 h-4" />
-              </span>{" "}
-              Blog
+              Visit my Dev.to
+              <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
             </a>
-          </li>
+          </div>
 
-          {/* ================= Featured Projects ================= */}
-          <div className="space-y-3">
-            <h3 className="font-semibold text-gray-800 mt-4">Featured Projects</h3>
+          <div className="border-t border-gray-600 my-4" />
 
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h4 className="text-sm font-medium text-gray-800">
-                  AutoDev IQ
-                </h4>
-              </div>
+          {/* Featured Projects*/}
+          <div>
+            <h5 className="text-[11px] tracking-widest uppercase text-lime-500 font-medium">
+              Featured Project
+            </h5>
 
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h4 className="text-sm font-medium text-gray-800">
-                  Blog Creator
-                </h4>
-              </div>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Link
+                href="#projects"
+                className="group relative flex items-center gap-2 px-4 py-2 bg-gray-200 text-black text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"
+              >
+                AutoDev IQ
+                <TbCircleArrowDownRightFilled  className="text-sm" />
+              </Link>
+
+              <Link
+                href="#projects"
+                className="group relative flex items-center gap-2 px-4 py-2 bg-gray-200 text-black text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"
+              >
+                Blog Creator
+                <TbCircleArrowDownRightFilled  className="text-sm" />
+              </Link>
             </div>
           </div>
         </div>
