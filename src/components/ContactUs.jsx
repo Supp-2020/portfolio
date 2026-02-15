@@ -42,7 +42,7 @@ export default function ContactUs() {
     }
   }
   return (
-    <section id="contact" className="mx-auto max-w-5xl py-16">
+    <section id="contact" className="mx-auto max-w-6xl py-16">
       {/* Header */}
       <div className="mb-8 flex items-center gap-8">
         <h2 className="bg-[#B9FF66] text-3xl font-bold px-3 py-1 rounded">
