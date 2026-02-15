@@ -63,7 +63,8 @@ const Projects = () => {
           Projects
         </h2>
         <p className="text-gray-900">
-          My professional journey and roles throughout my career
+          A collection of things I’ve built, from small experiments to
+          full-scale applications
         </p>
       </div>
       <div className="max-w-6xl mx-auto">
