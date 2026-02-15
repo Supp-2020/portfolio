@@ -14,7 +14,7 @@ const LandingScreen = () => {
             My Creative Space
           </h3>
 
-          <div className="bg-[#191a23] text-white rounded-2xl shadow-md px-6 py-4 border border-gray-100 space-y-3 mt-4">
+          <div className="bg-[#191a23] text-white rounded-2xl shadow-md px-6 py-4 border border-gray-100 space-y-2 mt-4">
             {/* Fake Code Editor Preview */}
             <div className="relative rounded-xl h-48 overflow-hidden">
               <Image
@@ -25,7 +25,7 @@ const LandingScreen = () => {
               />
             </div>
 
-            <h5 className="font-semibold text-lg">Code Pen Creations</h5>
+            <h5 className="font-semibold text-lg mb-1">Code Pen Creations</h5>
             <p className="text-sm">
               Tiny bits of code, big ideas
               <br />
@@ -35,14 +35,14 @@ const LandingScreen = () => {
                 href="https://codepen.io/supp-2020"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline ml-2 text-xs font-semibold text-[#b9ff66] flex items-center gap-1 underline"
+                className="mt-2 text-xs font-semibold text-[#b9ff66] flex items-center gap-1 underline"
               >
                 View on CodePen
               </a>
             </p>
           </div>
 
-          <div className="border-t border-gray-600 my-5" />
+          <div className="border-t border-gray-600 my-4" />
 
           {/* Blogs section */}
           <div className="">
