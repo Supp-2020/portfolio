@@ -1,3 +1,4 @@
+import CodeEditor from "@/ui/CodeEditor";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaDev, FaPenNib } from "react-icons/fa";
@@ -13,7 +14,7 @@ const LandingScreen = () => {
             My Creative Space
           </h3>
 
-          <div className="bg-[#191a23] text-white rounded-2xl shadow-md p-4 border border-gray-100 space-y-3 mt-4">
+          <div className="bg-[#191a23] text-white rounded-2xl shadow-md px-6 py-4 border border-gray-100 space-y-3 mt-4">
             {/* Fake Code Editor Preview */}
             <div className="relative rounded-xl h-48 overflow-hidden">
               <Image
@@ -92,7 +93,9 @@ const LandingScreen = () => {
           </div>
         </div>
         {/* Right Panel */}
-        <div className="w-[70%] h-full"></div>
+        <div className="w-[70%] h-full">
+          <CodeEditor />
+        </div>
       </div>
     </section>
   );
