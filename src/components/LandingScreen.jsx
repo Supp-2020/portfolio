@@ -2,7 +2,7 @@ import CodeEditor from "@/ui/CodeEditor";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaDev, FaPenNib } from "react-icons/fa";
-import { TbCircleArrowDownRightFilled  } from "react-icons/tb";
+import { TbCircleArrowDownRightFilled } from "react-icons/tb";
 
 const LandingScreen = () => {
   return (
@@ -16,12 +16,12 @@ const LandingScreen = () => {
 
           <div className="bg-[#191a23] text-white rounded-2xl shadow-md px-6 py-4 border border-gray-100 space-y-2 mt-4">
             {/* Fake Code Editor Preview */}
-            <div className="relative rounded-xl h-48 overflow-hidden">
+            <div className="relative rounded-xl h-48 overflow-hidden group">
               <Image
                 src="/images/codepen-1.png"
                 alt="Code Pen"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 cursor-pointer"
               />
             </div>
 
@@ -42,7 +42,7 @@ const LandingScreen = () => {
             </p>
           </div>
 
-          <div className="border-t border-gray-600 my-4" />
+          <div className="border-t border-gray-400 my-4" />
 
           {/* Blogs section */}
           <div className="">
@@ -65,7 +65,7 @@ const LandingScreen = () => {
             </a>
           </div>
 
-          <div className="border-t border-gray-600 my-4" />
+          <div className="border-t border-gray-400 my-4" />
 
           {/* Featured Projects*/}
           <div>
@@ -79,7 +79,7 @@ const LandingScreen = () => {
                 className="group relative flex items-center gap-2 px-4 py-2 bg-gray-200 text-black text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"
               >
                 AutoDev IQ
-                <TbCircleArrowDownRightFilled  className="text-sm" />
+                <TbCircleArrowDownRightFilled className="text-sm" />
               </Link>
 
               <Link
@@ -87,13 +87,33 @@ const LandingScreen = () => {
                 className="group relative flex items-center gap-2 px-4 py-2 bg-gray-200 text-black text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"
               >
                 Blog Creator
-                <TbCircleArrowDownRightFilled  className="text-sm" />
+                <TbCircleArrowDownRightFilled className="text-sm" />
               </Link>
             </div>
           </div>
         </div>
         {/* Right Panel */}
-        <div className="w-[70%] h-full">
+        <div className="w-[70%] h-full flex flex-col gap-8 px-6">
+          {/* Intro Section */}
+          <div className="max-w-4xl px-6">
+            <h2 className="text-[48px] font-extrabold leading-[1.1] tracking-tight text-black">
+              I engineer{" "}
+              <span className="relative inline-block align-baseline">
+                <span className="relative z-10">web experiences</span>
+                <span className="absolute left-0 bottom-[6px] w-full h-[12px] bg-[#b9ff66] -z-0"></span>
+              </span>
+              <br />
+              that make and measure{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10">impact.</span>
+                <span className="absolute left-0 -bottom-[6px] w-full h-[4px] bg-red-500"></span>
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg text-gray-600 max-w-2xl">
+              Focused on performance, clarity, and creative problem-solving.
+            </p>
+          </div>
           <CodeEditor />
         </div>
       </div>

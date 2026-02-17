@@ -135,7 +135,6 @@ const Footer = () => {
               </a>
             ))}
           </div>
-          <code>Last Updated : 25/01/2026</code>
         </div>
       </div>
     </footer>
