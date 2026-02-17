@@ -151,3 +151,74 @@ export const projectConfig = {
     carouselImages: ["/images/todo_image.png"],
   },
 };
+
+export const jsQuestions = [
+  {
+    question: "console.log([] == ![]);",
+    hint: "// Think about coercion order",
+    answer: "true",
+    explanation:
+      "![] becomes false. Then [] == false → [] becomes '' → 0 → false → true.",
+  },
+  {
+    question: "console.log(NaN === NaN);",
+    hint: "// Special numeric case",
+    answer: "false",
+    explanation:
+      "NaN is the only value in JavaScript that is not equal to itself.",
+  },
+  {
+    question: "console.log(Object.is(NaN, NaN));",
+    hint: "// Compare with previous question",
+    answer: "true",
+    explanation: "Object.is treats NaN as equal to NaN, unlike ===.",
+  },
+  {
+    question: "console.log(typeof document?.all);",
+    hint: "// Browser quirk",
+    answer: "undefined",
+    explanation:
+      "document.all is a weird legacy object that typeof reports as 'undefined'.",
+  },
+  {
+    question: "console.log([1,2] + [3]);",
+    hint: "// Arrays convert to strings",
+    answer: "1,23",
+    explanation:
+      "Arrays stringify to '1,2' and '3'. Then string concatenation happens.",
+  },
+  {
+    question: "console.log(0.1 + 0.2 === 0.3);",
+    hint: "// Floating point precision",
+    answer: "false",
+    explanation:
+      "0.1 + 0.2 equals 0.30000000000000004 due to binary floating point math.",
+  },
+  {
+    question: "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());",
+    hint: "// What does + 'a' evaluate to?",
+    answer: "banana",
+    explanation:
+      "+'a' becomes NaN. So the expression becomes 'b' + 'a' + NaN + 'a' → 'baNaNa'. Then toLowerCase() makes it 'banana'.",
+  },
+  {
+    question: "console.log(Math.max() < Math.min());",
+    hint: "// Default values",
+    answer: "true",
+    explanation: "Math.max() returns -Infinity, Math.min() returns Infinity.",
+  },
+  {
+    question: "console.log(typeof null);",
+    hint: "// Historical bug",
+    answer: "object",
+    explanation:
+      "This is a legacy bug in JavaScript — null is not actually an object.",
+  },
+  {
+    question: "console.log([] === []);",
+    hint: "// Reference comparison",
+    answer: "false",
+    explanation:
+      "Arrays are objects. Different references are never strictly equal.",
+  },
+];
