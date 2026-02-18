@@ -91,6 +91,38 @@ export const funWebsites = [
   },
 ];
 
+export const references = [
+  {
+    key: '1002A',
+    label: "Positivus Theme",
+    href: "https://positivustheme.vercel.app/",
+  },
+  {
+    key: '1002B',
+    label: "Scribble Images",
+    href: "https://icons8.com/illustrations/style--scribbles/free--y",
+  },
+  {
+    key: '1002C',
+    label: "Resend Email Service",
+    href: "https://resend.com/docs/dashboard/emails/introduction",
+  },
+  {
+    key: '1002D',
+    label: "Vector Illustrations",
+    href: "https://storyset.com/",
+  },
+  {
+    key: '1002E',
+    label: "Tricky JavaScript Quirks",
+    href: "https://github.com/denysdovhan/wtfjs",
+  },
+  {
+    key: '1002F',
+    label: "SVG Icons",
+    href: "https://react-icons.github.io/react-icons/",
+  },
+];
 export const CARD_VARIANTS = [
   {
     cardBg: "bg-[#f3f3f3]",
@@ -118,7 +150,6 @@ export const CARD_VARIANTS = [
   },
 ];
 
-/* Images from https://icons8.com/illustrations/style--scribbles/free--y */
 export const projectConfig = {
   "autodev-iq": {
     title: "AutoDev IQ",

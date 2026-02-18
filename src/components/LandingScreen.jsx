@@ -111,7 +111,13 @@ const LandingScreen = () => {
             </h2>
 
             <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-              Focused on performance, clarity, and creative problem-solving.
+              Focused on performance, clarity, and creative problem-solving.{" "}
+              <a
+                href="#footer-section"
+                className="font-semibold text-black underline underline-offset-4 decoration-[#b9ff66] decoration-2 hover:decoration-red-500 transition-all duration-200"
+              >
+                Resume?
+              </a>
             </p>
           </div>
           <CodeEditor />
