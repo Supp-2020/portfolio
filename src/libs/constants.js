@@ -78,6 +78,19 @@ export const renderRepo = [
   "todo-list",
 ];
 
+export const funWebsites = [
+  {
+    key: "Swap Window",
+    href: "https://www.window-swap.com/Window",
+    emoji: "🙂",
+  },
+  {
+    key: "Bruno Simon Portfolio",
+    href: "https://bruno-simon.com/",
+    emoji: "🚗",
+  },
+];
+
 export const CARD_VARIANTS = [
   {
     cardBg: "bg-[#f3f3f3]",

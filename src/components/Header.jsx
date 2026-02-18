@@ -4,7 +4,8 @@ export default function Header() {
   const rightNavItems = [
     { label: "Work Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Say Hello", href: "#contact" },
+    { label: "Contact Me", href: "#contact" },
+    { label: "About Me", href: "#" },
   ];
 
   return (
@@ -22,7 +23,11 @@ export default function Header() {
               key={item.label}
               href={item.href}
               scroll={true}
-              className={` ${item.label === "Say Hello" ? "px-3 py-2 rounded-md text-xs font-semibold bg-[#b9ff66] text-[#191a23] transition whitespace-nowrap" : "text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"}`}
+              className={`${
+                item.label === "About Me"
+                  ? "px-3 py-2 rounded-md text-xs font-semibold bg-[#b9ff66] text-[#191a23] transition whitespace-nowrap"
+                  : "text-sm font-medium text-stone-600 hover:text-stone-900 transition-colors"
+              }`}
             >
               {item.label}
             </Link>

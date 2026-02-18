@@ -112,9 +112,14 @@ export default function CodeEditorSection() {
           Diagnostics
         </div>
 
-        {/* Error Output */}
         <div
-          className={`border-t-2 ${result === "wrong" ? "border-red-500" : "border-green-500"} px-8 py-4 font-mono text-sm bg-[#1c2028]`}
+          className={`border-t-2 ${
+            result === "wrong"
+              ? "border-red-500"
+              : result === "correct"
+                ? "border-green-500"
+                : "border-black/40"
+          } px-8 py-4 font-mono text-sm bg-[#1c2028] min-h-[120px] transition-all duration-200`}
         >
           {/* Neutral State */}
           {!result && (

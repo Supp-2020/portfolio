@@ -4,32 +4,36 @@ import React from "react";
 import { GrLinkedin } from "react-icons/gr";
 import { BsGithub } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
+import { FaCodepen, FaDev } from "react-icons/fa";
+import { funWebsites } from "../libs/constants";
 
 const socialIcons = [
   {
     key: "LinkedIn",
-    icon: <GrLinkedin />,
+    icon: <GrLinkedin size={20} />,
     href: "https://www.linkedin.com/in/supreetpradhan/",
   },
-  { key: "GitHub", icon: <BsGithub />, href: "https://github.com/Supp-2020" },
-];
-const funWebsites = [
   {
-    key: "Swap Window",
-    href: "https://www.window-swap.com/Window",
-    emoji: "🙂",
+    key: "GitHub",
+    icon: <BsGithub size={20} />,
+    href: "https://github.com/Supp-2020",
   },
   {
-    key: "Bruno Simon Portfolio",
-    href: "https://bruno-simon.com/",
-    emoji: "🚗",
+    key: "CodePen",
+    icon: <FaCodepen size={20} />,
+    href: "https://codepen.io/supp-2020",
+  },
+  {
+    key: "Dev.to",
+    icon: <FaDev size={20} />,
+    href: "https://dev.to/supreet_pradhan",
   },
 ];
 
 const navLinks = [
-  { label: "Work Experience", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Blogs", href: "#" },
+  { label: "Work Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact Me", href: "#contact" },
   { label: "About Me", href: "#", isAboutMe: true },
 ];
 
@@ -40,11 +44,11 @@ const Footer = () => {
         {/* Main footer content */}
         <div className="flex items-start justify-between mb-6">
           {/* Left section - Logo and contact */}
-          <div className="flex-1 space-y-4">
+          <div className="space-y-4">
             <h2 className="text-2xl font-bold mb-6">Supreet.js</h2>
 
             <div className="">
-              <span className="inline-block bg-[#b9ff66] text-slate-900 text-xs font-bold px-3 py-1 rounded mb-4">
+              <span className="inline-block text-lime-300 text-md font-bold rounded mb-4">
                 Contact me
               </span>
               <div className="space-y-1 text-sm text-gray-300">
@@ -60,7 +64,11 @@ const Footer = () => {
                 <p>Location: Bangalore, India</p>
               </div>
             </div>
+          </div>
 
+          {/* Mid Section - Navigation Links */}
+
+          <div className="space-y-6">
             {/* Navigation links */}
             <div className="flex gap-8">
               {navLinks.map((item) => (
@@ -84,19 +92,10 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Social icons */}
-            <div className="flex gap-4">
-              {socialIcons.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition"
-                >
-                  {item.icon}
-                </a>
-              ))}
+            <div className="">
+              <span className="inline-block text-lime-300 text-md font-bold rounded mb-4">
+                References & Inspirations
+              </span>
             </div>
           </div>
 
@@ -114,6 +113,19 @@ const Footer = () => {
               <FiDownload />
               Download Resume
             </button>
+            <div className="flex gap-4">
+              {socialIcons.map((item) => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition"
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
