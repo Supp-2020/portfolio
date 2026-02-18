@@ -3,7 +3,6 @@
 import React from "react";
 import { GrLinkedin } from "react-icons/gr";
 import { BsGithub } from "react-icons/bs";
-import { FiDownload } from "react-icons/fi";
 import { FaCodepen, FaDev } from "react-icons/fa";
 import { funWebsites, references } from "../libs/constants";
 
@@ -120,11 +119,12 @@ const Footer = () => {
           {/* Right section - Download Resume */}
           <div className="basis-[30%] flex flex-col items-end gap-5">
             <a
-              href="https://drive.google.com/uc?export=download&id=1RJcKiHYFWaumhtogmwruFS70duLdlLXx"
+              href="https://drive.google.com/file/d/1RJcKiHYFWaumhtogmwruFS70duLdlLXx/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#b9ff66] flex items-center gap-2 hover:bg-lime-200 text-slate-900 font-bold px-6 py-2 rounded transition cursor-pointer"
             >
-              <FiDownload />
-              Download Resume
+              View Resume
             </a>
             <div className="flex gap-4">
               {socialIcons.map((item) => (
