@@ -42,20 +42,20 @@ export default function ContactUs() {
     }
   }
   return (
-    <section id="contact" className="mx-auto max-w-6xl py-16">
+    <section id="contact" className="mx-auto max-w-6xl">
       {/* Header */}
-      <div className="mb-8 flex items-center gap-8">
-        <h2 className="bg-[#B9FF66] text-3xl font-bold px-3 py-1 rounded">
+      <div className="mb-6 md:mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-8">
+        <h2 className="bg-[#B9FF66] text-2xl md:text-3xl font-bold px-3 py-1 rounded">
           Say Hello
         </h2>
-        <p className="text-gray-900">Drop a message — I’m always happy to connect.</p>
+        <p className="text-gray-900 text-sm md:text-base">Drop a message — I’m always happy to connect.</p>
       </div>
 
       {/* Form Container */}
-      <div className="relative bg-[#F3F3F3] rounded-2xl p-12 flex gap-12">
+      <div className="relative bg-[#F3F3F3] rounded-2xl p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row gap-8 md:gap-12">
         <div className="flex-1">
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
             {/* Name Field */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -129,7 +129,7 @@ export default function ContactUs() {
             alt="innovation-icon"
             width={350}
             height={350}
-            className="shrink-0"
+            className="shrink-0 w-full max-w-[250px] md:max-w-[300px] lg:max-w-[350px] h-auto"
           />
         </div>
       </div>

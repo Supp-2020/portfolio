@@ -12,13 +12,18 @@ export function SlideOverlay({ open, onClose, slideFrom, children }) {
 
     if (open) {
       setRender(true);  //
+      document.body.style.overflow = 'hidden';
       id = setTimeout(() => setVisible(true), 0);
     } else {
       setVisible(false);
+      document.body.style.overflow = '';
       id = setTimeout(() => setRender(false), 600);
     }
 
-    return () => clearTimeout(id);
+    return () => {
+      clearTimeout(id);
+      document.body.style.overflow = '';
+    };
   }, [open]);
   useEffect(() => {
     const handler = (e) => e.key === "Escape" && onClose();
@@ -45,7 +50,7 @@ export function SlideOverlay({ open, onClose, slideFrom, children }) {
       {/* Sliding panel */}
       <div
         className={`
-          fixed top-0 h-full w-1/2 bg-white shadow-xl
+          fixed top-0 h-full w-full bg-white shadow-xl overflow-hidden
           ${fromRight ? "right-0" : "left-0"}
           will-change-transform
           transform transition-transform

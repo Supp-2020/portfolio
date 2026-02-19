@@ -40,20 +40,20 @@ const Footer = () => {
   return (
     <footer
       id="footer-section"
-      className="bg-[#191A23] rounded-t-4xl text-white mt-16 mx-16"
+      className="bg-[#191A23] rounded-t-4xl text-white mt-8 md:mt-16 mx-4 md:mx-8 lg:mx-16"
     >
-      <div className="px-16 pt-12 pb-8">
+      <div className="px-4 md:px-8 lg:px-16 pt-8 md:pt-12 pb-6 md:pb-8">
         {/* Main footer content */}
-        <div className="flex mb-6">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 mb-6">
           {/* Left section - Logo and contact */}
-          <div className="basis-[30%] space-y-4">
-            <h2 className="text-2xl font-bold mb-6">Supreet.js</h2>
+          <div className="lg:basis-[30%] space-y-4">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Supreet.js</h2>
 
             <div className="">
-              <span className="inline-block text-lime-300 text-md font-bold rounded mb-4">
+              <span className="inline-block text-lime-300 text-sm md:text-md font-bold rounded mb-3 md:mb-4">
                 Contact me
               </span>
-              <div className="space-y-1 text-sm text-gray-300">
+              <div className="space-y-1 text-xs md:text-sm text-gray-300">
                 <p>
                   Email:{" "}
                   <a
@@ -69,9 +69,9 @@ const Footer = () => {
           </div>
 
           {/* Mid Section - Navigation Links */}
-          <div className="basis-[40%] space-y-6">
-            <div className="max-w-xl mx-auto">
-              <div className="flex gap-8 flex-wrap">
+          <div className="lg:basis-[40%] space-y-6">
+            <div className="lg:max-w-xl lg:mx-auto">
+              <div className="flex gap-4 md:gap-8 flex-wrap">
                 {navLinks.map((item) => (
                   <React.Fragment key={item.label}>
                     {item?.isAboutMe ? (
@@ -84,7 +84,7 @@ const Footer = () => {
                     ) : (
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:text-white transition text-sm"
+                        className="text-gray-400 hover:text-white transition text-xs md:text-sm"
                       >
                         {item.label}
                       </a>
@@ -93,12 +93,12 @@ const Footer = () => {
                 ))}
               </div>
 
-              <div className="mt-8">
-                <span className="text-lime-300 text-md font-bold mb-3 inline-block">
+              <div className="mt-6 md:mt-8">
+                <span className="text-lime-300 text-sm md:text-md font-bold mb-3 inline-block">
                   References & Inspirations
                 </span>
 
-                <ul className="columns-2 gap-8 text-sm text-gray-400">
+                <ul className="columns-1 sm:columns-2 gap-4 md:gap-8 text-xs md:text-sm text-gray-400">
                   {references.map((ref) => (
                     <li key={ref.key} className="mb-2 break-inside-avoid">
                       <a
@@ -117,16 +117,16 @@ const Footer = () => {
           </div>
 
           {/* Right section - Download Resume */}
-          <div className="basis-[30%] flex flex-col items-end gap-5">
+          <div className="lg:basis-[30%] flex flex-col items-start lg:items-end gap-4 md:gap-5">
             <a
               href="https://drive.google.com/file/d/1RJcKiHYFWaumhtogmwruFS70duLdlLXx/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#b9ff66] flex items-center gap-2 hover:bg-lime-200 text-slate-900 font-bold px-6 py-2 rounded transition cursor-pointer"
+              className="bg-[#b9ff66] inline-flex items-center justify-center gap-2 hover:bg-lime-200 text-slate-900 font-bold px-6 py-2 rounded transition cursor-pointer text-sm md:text-base"
             >
               View Resume
             </a>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-start lg:justify-end">
               {socialIcons.map((item) => (
                 <a
                   key={item.key}
@@ -143,22 +143,24 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-6 flex items-center justify-between text-xs text-gray-400">
-          <div className=" flex items-center gap-8">
-            <code>Fun Websites: </code>
-            {funWebsites.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition"
-              >
-                <code>
-                  {item.key} {item.emoji}
-                </code>
-              </a>
-            ))}
+        <div className="border-t border-gray-700 pt-4 md:pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:justify-between text-xs text-gray-400">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-8">
+            <code className="font-semibold">Fun Websites: </code>
+            <div className="flex flex-wrap gap-3 md:gap-8">
+              {funWebsites.map((item) => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition"
+                >
+                  <code>
+                    {item.key} {item.emoji}
+                  </code>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
