@@ -40,9 +40,9 @@ const Footer = () => {
   return (
     <footer
       id="footer-section"
-      className="bg-[#191A23] rounded-t-4xl text-white mt-8 md:mt-16 mx-4 md:mx-8 lg:mx-16"
+      className="bg-[#191A23] rounded-t-4xl text-white mt-8 md:mt-16 md:mx-8 lg:mx-16"
     >
-      <div className="px-4 md:px-8 lg:px-16 pt-8 md:pt-12 pb-6 md:pb-8">
+      <div className="px-6 md:px-8 lg:px-16 pt-8 md:pt-12 pb-6 md:pb-8">
         {/* Main footer content */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 mb-6">
           {/* Left section - Logo and contact */}
