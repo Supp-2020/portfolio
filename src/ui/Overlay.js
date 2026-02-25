@@ -50,7 +50,7 @@ export function SlideOverlay({ open, onClose, slideFrom, children }) {
       {/* Sliding panel */}
       <div
         className={`
-          fixed top-0 h-full w-full bg-white shadow-xl overflow-hidden
+          fixed top-0 h-full w-1/2 bg-white shadow-xl overflow-hidden
           ${fromRight ? "right-0" : "left-0"}
           will-change-transform
           transform transition-transform

@@ -168,7 +168,7 @@ export const projectConfig = {
     ],
   },
   "blog-project-VUE": {
-    title: "Blog Creator Application",
+    title: "LiveWire Blog",
     image: "/assets/scribbles-scribbles-35.svg",
     featured: true,
     carouselImages: [
@@ -180,12 +180,12 @@ export const projectConfig = {
     ],
   },
   "lynx-pinterest": {
-    title: "Pinterest Layout with Lynx",
+    title: "LynxCanvas",
     image: "/assets/scribbles-scribbles-47.svg",
     carouselImages: ["/images/lynx_image.jpg"],
   },
   "password-validation": {
-    title: "Form Validator",
+    title: "FormGuard",
     image: "/assets/scribbles-scribbles-43.svg",
     carouselImages: ["/images/form_validation_image.png"],
   },

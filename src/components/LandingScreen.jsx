@@ -6,10 +6,10 @@ import { TbCircleArrowDownRightFilled } from "react-icons/tb";
 
 const LandingScreen = () => {
   return (
-    <section className="min-h-screen py-8 md:py-0">
+    <section className="py-8 md:py-2 lg:py-0 md:min-h-[calc(100svh-88px)]">
       <div className="w-full h-full flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-8 lg:gap-5">
         {/* Left Panel */}
-        <div className="w-full lg:w-[30%] h-full p-0 order-2 lg:order-1 mt-8 md:mt-12 lg:mt-0">
+        <div className="w-full lg:w-[30%] h-full p-0 order-2 lg:order-1 mt-8 md:mt-6 lg:mt-0">
           <h3 className="bg-[#B9FF66] w-fit text-2xl md:text-3xl font-bold px-3 py-1 rounded">
             My Creative Space
           </h3>
