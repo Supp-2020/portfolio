@@ -119,7 +119,7 @@ const Footer = () => {
           {/* Right section - Download Resume */}
           <div className="lg:basis-[30%] flex flex-col items-start lg:items-end gap-4 md:gap-5">
             <a
-              href="https://drive.google.com/file/d/146LioU1MILYzjMd5DSaJMKsKA1PxN8u6/view?usp=sharing"
+              href="https://drive.google.com/file/d/1YwcPbcPsuNXi6BoTKc7iD5hlrQk8_Awd/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#b9ff66] inline-flex items-center justify-center gap-2 hover:bg-lime-200 text-slate-900 font-bold px-6 py-2 rounded transition cursor-pointer text-sm md:text-base"

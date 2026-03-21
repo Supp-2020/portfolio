@@ -46,7 +46,7 @@ const LandingScreen = () => {
 
           {/* Blogs section */}
           <div className="">
-            <h5 className="text-[11px] tracking-widest uppercase text-lime-500 font-medium">
+            <h5 className="text-[11px] tracking-widest uppercase text-lime-600 font-medium">
               Blog
             </h5>
 
@@ -69,7 +69,7 @@ const LandingScreen = () => {
 
           {/* Featured Projects*/}
           <div>
-            <h5 className="text-[11px] tracking-widest uppercase text-lime-500 font-medium">
+            <h5 className="text-[11px] tracking-widest uppercase text-lime-600 font-medium">
               Featured Project
             </h5>
 
