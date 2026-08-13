@@ -26,7 +26,7 @@ export default function CodeEditorSection() {
   };
   return (
     <div className="w-full max-w-5xl rounded-2xl bg-[#1f2430] shadow-[0_40px_40px_rgba(0,0,0,0.4)] border border-white/5 overflow-hidden">
-      <div className="flex items-center justify-between px-6 py-4 text-sm tracking-wide text-slate-400 bg-[#222733] border-b border-black/40">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 px-4 md:px-6 py-3 md:py-4 text-xs sm:text-sm tracking-wide text-slate-400 bg-[#222733] border-b border-black/40">
         {/* Header */}
         <div className="flex items-center gap-2 font-semibold text-slate-300 relative group">
           tricky-js-playground.js
@@ -46,8 +46,8 @@ export default function CodeEditorSection() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
-          <span className="text-slate-400">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <span className="text-xs sm:text-sm text-slate-400">
             {current + 1} / {jsQuestions.length}
           </span>
 
@@ -57,7 +57,7 @@ export default function CodeEditorSection() {
               setResult(null);
               setInput("");
             }}
-            className="text-xs px-3 py-1 bg-black/30 rounded-md hover:bg-black/50"
+            className="text-xs px-2 sm:px-3 py-1 bg-black/30 rounded-md hover:bg-black/50"
           >
             Prev
           </button>
@@ -68,7 +68,7 @@ export default function CodeEditorSection() {
               setResult(null);
               setInput("");
             }}
-            className="text-xs px-3 py-1 bg-[#b9ff66] text-black rounded-md font-semibold"
+            className="text-xs px-2 sm:px-3 py-1 bg-[#b9ff66] text-black rounded-md font-semibold"
           >
             Next
           </button>
@@ -76,8 +76,8 @@ export default function CodeEditorSection() {
       </div>
 
       {/* Code Area */}
-      <div className="px-10 py-12 font-mono text-[16px] leading-8 text-slate-300">
-        <div className="grid grid-cols-[40px_1fr] gap-4">
+      <div className="px-4 md:px-8 lg:px-10 py-6 md:py-10 lg:py-12 font-mono text-sm md:text-base lg:text-[16px] leading-6 md:leading-8 text-slate-300">
+        <div className="grid grid-cols-[30px_1fr] md:grid-cols-[40px_1fr] gap-2 md:gap-4">
           {/* Line Numbers */}
           <div className="text-slate-500 select-none text-right pr-2 space-y-2">
             <div>1</div>
@@ -86,17 +86,17 @@ export default function CodeEditorSection() {
           </div>
 
           {/* Code Content */}
-          <div className="space-y-2">
-            <div>{currentQuestion.question}</div>
+          <div className="space-y-2 overflow-x-auto">
+            <div className="break-words">{currentQuestion.question}</div>
 
-            <div className="text-slate-500 italic">{currentQuestion.hint}</div>
+            <div className="text-slate-500 italic text-xs md:text-sm">{currentQuestion.hint}</div>
 
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && checkAnswer()}
               placeholder="Type the output and press Enter"
-              className="bg-transparent border-none outline-none text-amber-300 w-full"
+              className="bg-transparent border-none outline-none text-amber-300 w-full text-sm md:text-base"
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function CodeEditorSection() {
       {/* Diagnostics Panel */}
       <div className="bg-[#1b1f27]">
         {/* Diagnostics Header */}
-        <div className="px-6 py-3 flex items-center gap-2 text-slate-400 text-sm border-b border-black/40">
+        <div className="px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 text-slate-400 text-xs md:text-sm border-b border-black/40">
           Diagnostics
         </div>
 
@@ -119,7 +119,7 @@ export default function CodeEditorSection() {
               : result === "correct"
                 ? "border-green-500"
                 : "border-black/40"
-          } px-8 py-4 font-mono text-sm bg-[#1c2028] min-h-[120px] transition-all duration-200`}
+          } px-4 md:px-6 lg:px-8 py-3 md:py-4 font-mono text-xs md:text-sm bg-[#1c2028] min-h-[100px] md:min-h-[120px] transition-all duration-200`}
         >
           {/* Neutral State */}
           {!result && (
@@ -132,7 +132,7 @@ export default function CodeEditorSection() {
           {result && (
             <>
               {/* Correct Answer */}
-              <div className="mt-3 text-slate-400 text-xs">
+              <div className="mt-2 md:mt-3 text-slate-400 text-xs">
                 <span className="text-slate-300 font-semibold">
                   Correct Answer:
                 </span>{" "}
@@ -144,7 +144,7 @@ export default function CodeEditorSection() {
               </div>
 
               {/* Explanation */}
-              <div className="mt-3 text-slate-500 text-xs leading-relaxed">
+              <div className="mt-2 md:mt-3 text-slate-500 text-xs leading-relaxed">
                 {currentQuestion.explanation}
               </div>
             </>
