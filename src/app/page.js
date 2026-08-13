@@ -8,19 +8,69 @@ import WorkExperience from "@/components/WorkExperience";
 import Projects from "@/components/Projects";
 import LandingScreen from "@/components/LandingScreen";
 
-export default function App() {
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://supreet-pradhan.vercel.app";
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Supreet Pradhan Portfolio",
+      url: siteUrl,
+      description:
+        "Portfolio website for Supreet Pradhan, a software developer building polished web experiences with React, Next.js, and TypeScript.",
+      inLanguage: "en",
+      author: {
+        "@type": "Person",
+        name: "Supreet Pradhan",
+      },
+    },
+    {
+      "@type": "Person",
+      name: "Supreet Pradhan",
+      jobTitle: "Software Developer",
+      url: siteUrl,
+      knowsAbout: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Frontend Engineering",
+        "Full Stack Development",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/supreetpradhan/",
+        "https://github.com/Supp-2020",
+        "https://dev.to/supreet_pradhan",
+        "https://codepen.io/supp-2020",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bangalore",
+        addressCountry: "IN",
+      },
+    },
+  ],
+};
+
+export default function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-1 px-16 space-y-5">
-        <LandingScreen />
-        <WorkExperience />
-        <Projects />
-        {/* <GithubSection /> */}
-        <ContactUs />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 px-16 space-y-5">
+          <LandingScreen />
+          <WorkExperience />
+          <Projects />
+          {/* <GithubSection /> */}
+          <ContactUs />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
