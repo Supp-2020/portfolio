@@ -167,9 +167,23 @@ export const projectConfig = {
       "/images/readme-12.png",
     ],
   },
+  "streaming-platform": {
+    title: "Kinora (Video Player)",
+    image: "/assets/scribbles-scribbles-32.svg",
+    featured: true,
+    carouselImages: [
+      "/images/streaming-1.png",
+      "/images/streaming-2.png",
+      "/images/streaming-3.png",
+      "/images/streaming-4.png",
+      "/images/streaming-5.png",
+      "/images/streaming-6.png",
+      "/images/streaming-7.png",
+    ],
+  },
   "blog-project-VUE": {
     title: "LiveWire Blog",
-    image: "/assets/scribbles-scribbles-35.svg",
+    image: "/assets/scribbles-scribbles-61.svg",
     featured: true,
     carouselImages: [
       "/images/blog_image4.png",
