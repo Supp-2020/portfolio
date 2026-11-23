@@ -170,7 +170,7 @@ export const projectConfig = {
   },
   "streaming-platform": {
     title: "Kinora (Video Player)",
-    image: "/assets/scribbles-scribbles-32.svg",
+    image: "/assets/scribbles-scribbles-61.svg",
     featured: true,
     carouselImages: [
       "/images/streaming-1.png",
@@ -184,7 +184,7 @@ export const projectConfig = {
   },
   "blog-project-VUE": {
     title: "LiveWire Blog",
-    image: "/assets/scribbles-scribbles-61.svg",
+    image: "/assets/scribbles-scribbles-47.svg",
     featured: true,
     carouselImages: [
       "/images/blog_image4.png",
@@ -196,7 +196,7 @@ export const projectConfig = {
   },
   "lynx-pinterest": {
     title: "LynxCanvas",
-    image: "/assets/scribbles-scribbles-47.svg",
+    image: "/assets/scribbles-scribbles-35.svg",
     carouselImages: ["/images/lynx_image.jpg"],
   },
   "password-validation": {

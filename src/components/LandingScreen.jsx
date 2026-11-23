@@ -46,7 +46,7 @@ const LandingScreen = () => {
 
           {/* Blogs section */}
           <div className="">
-            <h5 className="text-[11px] tracking-widest uppercase text-lime-600 font-medium">
+            <h5 className="inline-block bg-[#B9FF66] text-black text-[11px] tracking-widest uppercase font-semibold px-2 py-0.5 rounded mb-1">
               Blog
             </h5>
 
@@ -69,7 +69,7 @@ const LandingScreen = () => {
 
           {/* Featured Projects*/}
           <div>
-            <h5 className="text-[11px] tracking-widest uppercase text-lime-600 font-medium">
+            <h5 className="inline-block bg-[#B9FF66] text-black text-[11px] tracking-widest uppercase font-semibold px-2 py-0.5 rounded">
               Featured Project
             </h5>
 
@@ -81,7 +81,13 @@ const LandingScreen = () => {
                 AutoDev IQ
                 <TbCircleArrowDownRightFilled className="text-sm" />
               </Link>
-
+              <Link
+                href="#projects"
+                className="group relative flex items-center gap-2 px-3 md:px-4 py-2 bg-gray-200 text-black text-xs md:text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"
+              >
+                Kinora (Video Player)
+                <TbCircleArrowDownRightFilled className="text-sm" />
+              </Link>
               <Link
                 href="#projects"
                 className="group relative flex items-center gap-2 px-3 md:px-4 py-2 bg-gray-200 text-black text-xs md:text-sm font-medium rounded-md hover:bg-gray-300 transition-colors"

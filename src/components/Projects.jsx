@@ -28,6 +28,9 @@ const Projects = () => {
         setRepoData(
           data
             .filter(({ name }) => renderRepo.includes(name))
+            .sort(
+              (a, b) => renderRepo.indexOf(a.name) - renderRepo.indexOf(b.name),
+            )
             .map(({ id, name, description, homepage, html_url }) => ({
               id,
               name,
