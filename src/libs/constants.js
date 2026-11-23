@@ -72,6 +72,7 @@ export const imageCards = [
 
 export const renderRepo = [
   "autodev-iq",
+  "streaming-platform",
   "blog-project-VUE",
   "lynx-pinterest",
   "password-validation",
